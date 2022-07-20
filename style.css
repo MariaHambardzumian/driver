@@ -114,5 +114,5 @@ input{
     padding: 3px;
     box-sizing: content-box !important;
     background-color: rgb(245, 245, 245);
-    z-index: 2;
+    z-index: 2; 
 }
