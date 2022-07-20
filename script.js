@@ -18,10 +18,13 @@ let p
 
 function print(i) {
     console.log(i);
-    data = xumb1[i];
-    main.html('')
-    let h2 = `<h2 class='N'>№ ${i + 1}</h2><hr><h2 class="quest">${data.question}</h2>`
-    main.append(h2);
+    data = xumb1[i]
+    $('.side').show()
+    $('.buttons').show()
+    let h2 = `<h2 class='N'>№ ${i + 1}</h2><hr><h2 class="quest">${data.question}</h2>`;
+    main.removeClass('all')
+        .html('')
+        .append(h2);
 
     if (data.image) {
         let img = document.createElement('img')
@@ -87,3 +90,32 @@ $('.side button').click((e) => {
         print(ind)
     }
 })
+
+// All numbers of questions in section
+function allQuestions() {
+    $('.side').hide()
+    $('.buttons').hide()
+    main.html('')
+        .addClass('all')
+        $('.main').append(`<button class='mistakes'>See mistakes</button>`)
+    for (let num = 1; num <= allCount; num++) {
+        $('.main').append(`<p class='question'>${num}</p>`)
+        console.log(52);
+    }
+
+    mistakes = Array.from(new Set(mistakes))
+    $('.mistakes').click(()=> {
+        mistakes.forEach(element => {
+           $( $('p')[element-1]).addClass('wrong')
+        }); 
+    })
+
+    $('p').click((e)=>{
+        let num = e.target.innerHTML
+        print(num - 1)
+    })
+    console.log(mistakes);
+}
+
+$('[icon]').click(allQuestions)
+$('#all').click(allQuestions)

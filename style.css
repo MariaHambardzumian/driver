@@ -55,7 +55,7 @@ hr{
     width: 100%;
 }
 
-p {
+.option {
     background-color: rgba(193, 193, 193, 0.5);
     padding: 7px;
     width: calc(98% - 14px);
@@ -63,7 +63,7 @@ p {
     cursor: pointer;
 }
 
-input{
+input[type='button']{
     width: 100px;
     height: 40px;
   margin: 0 20px;
@@ -75,11 +75,11 @@ input{
 }
 
 .wrong{
-    background-color: rgba(255, 0, 0, 0.8);
+    background-color: rgba(255, 0, 0, 0.8) !important;
 }
 
 .right{
-    background-color: rgba(0, 128, 0, 0.8);
+    background-color: rgba(0, 128, 0, 0.8) !important;
 }
 
 .section{
@@ -115,4 +115,30 @@ input{
     box-sizing: content-box !important;
     background-color: rgb(245, 245, 245);
     z-index: 2; 
+}
+.main.all p{
+    background-color: rgba(193, 193, 193, 0.5);
+    padding: 7px;
+    width: 40px;
+    /* box-sizing: content-box!important; */
+    /* flex: 1; */
+    cursor: pointer;
+}
+.main.all{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 40px);
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.mistakes{
+    grid-column: 1/-1;
+    padding: 10px;
+}
+#all{
+    padding: 4px 10px;
+    box-sizing: content-box;
+    height: 30px;
+    margin: 20px 20px;
+   float: right;
 }
