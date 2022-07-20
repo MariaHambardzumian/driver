@@ -31,7 +31,7 @@
 @media screen and (max-width:500px) {
     :root{
         --w:90%;
-        --icon:5%;
+        --icon:6%;
     }
 }
 img {
