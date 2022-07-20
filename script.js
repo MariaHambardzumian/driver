@@ -21,6 +21,7 @@ function print(i) {
     data = xumb1[i]
     $('.side').show()
     $('.buttons').show()
+    $('#all').show()
     let h2 = `<h2 class='N'>№ ${i + 1}</h2><hr><h2 class="quest">${data.question}</h2>`;
     main.removeClass('all')
         .html('')
@@ -95,6 +96,7 @@ $('.side button').click((e) => {
 function allQuestions() {
     $('.side').hide()
     $('.buttons').hide()
+    $('#all').hide()
     main.html('')
         .addClass('all')
         $('.main').append(`<button class='mistakes'>See mistakes</button>`)
