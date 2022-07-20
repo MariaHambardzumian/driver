@@ -99,25 +99,34 @@ function allQuestions() {
     $('#all').hide()
     main.html('')
         .addClass('all')
-        $('.main').append(`<button class='mistakes'>See mistakes</button>`)
+    $('.main').append(`<button class='mistakes'>See mistakes</button>`)
     for (let num = 1; num <= allCount; num++) {
         $('.main').append(`<p class='question'>${num}</p>`)
         console.log(52);
     }
 
     mistakes = Array.from(new Set(mistakes))
-    $('.mistakes').click(()=> {
+    $('.mistakes').click(() => {
         mistakes.forEach(element => {
-           $( $('p')[element-1]).addClass('wrong')
-        }); 
+            $($('p')[element - 1]).addClass('wrong')
+        });
     })
 
-    $('p').click((e)=>{
+    $('p').click((e) => {
         let num = e.target.innerHTML
         print(num - 1)
     })
     console.log(mistakes);
 }
 
-$('[icon]').click(allQuestions)
+$('[icon]').click((e) => {
+    if (!$(e.target).attr('opened')) {
+        allQuestions()
+        $(e.target).attr('opened', 'q');
+    }
+    else {
+        $(e.target).removeAttr('opened');
+        print(ind)
+    }
+})
 $('#all').click(allQuestions)
