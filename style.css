@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media screen and (min-width:1150px) {
+    :root{
+        --w:35%;
+        --icon:30px;
+    }
+}
+@media screen and (min-width:1000px) and (max-width:1300px){
+    :root{
+        --w:40%;
+        --icon:28px;
+    }
+}
+@media screen and (min-width:700px) and (max-width:1000px){
+    :root{
+        --w:52%;
+        --icon:25px;
+    }
+}
+@media screen and (min-width:500px) and (max-width:700px){
+    :root{
+        --w:70%;
+        --icon:23px;
+    }
+}
+@media screen and (max-width:500px) {
+    :root{
+        --w:90%;
+        --icon:5%;
+    }
+}
+img {
+    width: 95%;
+}
+.main {
+    width: var(--w);
+    margin: 20px auto;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-gap: 15px;
+    position: relative;
+    /* margin-top: 10vh; */
+}
+.N{
+    text-align: center;
+    background-color: rgba(255, 119, 255, 0.411);
+}
+hr{
+    width: 100%;
+}
+
+p {
+    background-color: rgba(193, 193, 193, 0.5);
+    padding: 7px;
+    width: calc(98% - 14px);
+    text-align: center;
+    cursor: pointer;
+}
+
+input{
+    width: 100px;
+    height: 40px;
+  margin: 0 20px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+
+.wrong{
+    background-color: rgba(255, 0, 0, 0.8);
+}
+
+.right{
+    background-color: rgba(0, 128, 0, 0.8);
+}
+
+.section{
+    margin: 20px 0;
+    display: grid;
+   justify-content: end;
+   grid-gap: 15px;
+}
+
+.side{
+    display: flex;
+    justify-content: space-between;
+    width: calc( var(--w) - 30px);
+    position: relative;
+    justify-self: center;
+    margin-left: calc(50% - (var(--w) - 30px) / 2);
+    top: 10px;
+    /* margin-top: 30px; */
+}
+.side button{
+    padding:10px;
+}
+
+[icon]{
+    cursor: pointer;
+    /* display: block; */
+    height: var(--icon);
+    width: var(--icon);
+    position: relative;
+    top: 5px;
+    left: 5px;
+    padding: 3px;
+    box-sizing: content-box !important;
+    background-color: rgb(245, 245, 245);
+    z-index: 2;
+}
