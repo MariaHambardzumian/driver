@@ -8,30 +8,35 @@
     :root{
         --w:35%;
         --icon:30px;
+        --intro: 50%
     }
 }
 @media screen and (min-width:1000px) and (max-width:1300px){
     :root{
         --w:40%;
         --icon:28px;
+        --intro: 80%
     }
 }
 @media screen and (min-width:700px) and (max-width:1000px){
     :root{
         --w:52%;
         --icon:25px;
+        --intro: 90%
     }
 }
 @media screen and (min-width:500px) and (max-width:700px){
     :root{
         --w:70%;
         --icon:23px;
+        --intro: 95%
     }
 }
 @media screen and (max-width:500px) {
     :root{
         --w:90%;
         --icon:6%;
+        --intro: 95%
     }
 }
 img {
@@ -141,4 +146,36 @@ input[type='button']{
     height: 30px;
     margin: 20px 20px;
    float: right;
+}
+
+.intro{
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 150px);
+    grid-gap: 20px;
+    justify-content: center;
+    margin: 30px auto;
+    justify-items: center;
+    align-content: center;
+    height: 90vh;
+    font-size: 20px;
+    width: 95%;
+    width: var(--intro);
+    /* position: absolute; */
+    box-shadow: 1px 1px 5px 4px inset rgba(128, 128, 128, 0.686) ;
+
+}
+.intro p{
+    box-shadow: 1px 1px 5px 4px inset rgba(128, 128, 128, 0.686) ;
+    padding: 7px;
+    width: 100%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.groups{
+    display: none;
+    width: 150px !important;
+    padding: 10px;
+    margin-left: calc(50% - 85px)!important;
 }

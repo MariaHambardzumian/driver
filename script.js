@@ -1,28 +1,38 @@
 
-let ind = (+localStorage.getItem('index'))
+const key = localStorage.getItem('key')
+let group = allData[key]
+let info = [...group]
+
+let ind = (+localStorage.getItem(key))
 if (!ind) ind = 0
 else ind = ind - 1
 
 let mistakes = []
 let rightAns = []
 
-let data = xumb1[ind]
-const allCount = xumb1.length
+
+let data = info[ind]
+const allCount = info.length
 
 let main = $('.main')
 
 let p
 
-function print(i) {
-    console.log(i);
-    data = xumb1[i]
+function showContentBar() {
     $('.side').show()
     $('.buttons').show()
     $('#all').show()
-    let h2 = `<h2 class='N'>№ ${i + 1}</h2><hr><h2 class="quest">${data.question}</h2>`;
+    $('.groups').hide()
     main.removeClass('all')
         .html('')
-        .append(h2);
+}
+function print(i) {
+    showContentBar()
+    data = info[i]
+
+    let h2 = `<h2 class='N'>№ ${i + 1}</h2><hr><h2 class="quest">${data.question}</h2>`;
+
+    main.append(h2);
 
     if (data.image) {
         let img = document.createElement('img')
@@ -39,29 +49,27 @@ function print(i) {
     p = $('.option')
 
     p.on('click', check)
+    ind = i
 }
 
 function check() {
     let rAns = (data.options)[0]
     let userAns = /[0-9]+/
     // debugger
-    let num = xumb1.indexOf(data) + 1
+    let num = info.indexOf(data) + 1
     userAns = +userAns.exec($(this)[0].innerHTML)[0];
     if (rAns != userAns) {
-        $(this).addClass('wrong') 
+        $(this).addClass('wrong')
         mistakes.push(num)
-        rightAns = rightAns.filter( e => e != num)
-        console.log('if');
-    }else{
-        console.log(4747)
+        uniqueEl(mistakes)
+        rightAns = rightAns.filter(e => e != num)
+    } else {
         rightAns.push(num)
-        mistakes = mistakes.filter( e => e != num)  
-        console.log('else');
+        uniqueEl(rightAns)
+        mistakes = mistakes.filter(e => e != num)
     }
-    console.log(mistakes);
-    console.log(rightAns);
     $(p[rAns - 1]).addClass('right')
-    
+
     p.off()
 }
 
@@ -77,35 +85,51 @@ $('[pager]').click(
 print(ind)
 
 $('.side button').click((e) => {
-    console.log($(this));
     if (e.target.innerHTML == 'Save') {
-        localStorage.setItem('index', ind + 1)
-        console.log('dfsf');
+        localStorage.setItem(key, ind + 1)
     }
     else if (e.target.innerHTML == 'Start') {
-        localStorage.removeItem('index')
+        info = [...group]
+        $('[save]').show()
+        localStorage.removeItem(key)
+        info
         mistakes = []
         rightAns = []
         ind = 0
         print(ind)
     }
+    if (e.target.innerHTML == 'Shuffle') {
+        ind = 0
+        shuffleArray(info)
+        $('[save]').hide()
+        print(ind)
+
+    }
 })
 
-// All numbers of questions in section
-function allQuestions() {
+function hideContentBar() {
     $('.side').hide()
     $('.buttons').hide()
     $('#all').hide()
+    $('.groups').show()
     main.html('')
         .addClass('all')
-    $('.main').append(`<button class='mistakes'>See mistakes</button>`)
+        .append(`<button class='mistakes'>See mistakes</button>`)
+}
+
+function uniqueEl(array) {
+    array = Array.from(new Set(array))
+    return array
+}
+
+// All numbers of questions in section
+function allQuestions() {
+
+    hideContentBar()
     for (let num = 1; num <= allCount; num++) {
         $('.main').append(`<p class='question'>${num}</p>`)
-        console.log(52);
     }
 
-    mistakes = Array.from(new Set(mistakes))
-    rightAns = Array.from(new Set(rightAns))
     $('.mistakes').click(() => {
         mistakes.forEach(element => {
             $($('p')[element - 1]).addClass('wrong')
@@ -119,7 +143,7 @@ function allQuestions() {
         let num = e.target.innerHTML
         print(num - 1)
     })
-    // console.log(mistakes);
+
 }
 
 $('[icon]').click((e) => {
@@ -133,3 +157,10 @@ $('[icon]').click((e) => {
     }
 })
 $('#all').click(allQuestions)
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
