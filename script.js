@@ -3,11 +3,8 @@ let ind = (+localStorage.getItem('index'))
 if (!ind) ind = 0
 else ind = ind - 1
 
-// let side = `<div class="side">
-// <button>Start</button>
-// <button>Save</button>`
-
 let mistakes = []
+let rightAns = []
 
 let data = xumb1[ind]
 const allCount = xumb1.length
@@ -47,27 +44,27 @@ function print(i) {
 function check() {
     let rAns = (data.options)[0]
     let userAns = /[0-9]+/
-    userAns = userAns.exec($(this)[0].innerHTML);
+    // debugger
+    let num = xumb1.indexOf(data) + 1
+    userAns = +userAns.exec($(this)[0].innerHTML)[0];
     if (rAns != userAns) {
-        $(this).addClass('wrong')
-        mistakes.push(xumb1.indexOf(data) + 1)
+        $(this).addClass('wrong') 
+        mistakes.push(num)
+        rightAns = rightAns.filter( e => e != num)
+        console.log('if');
+    }else{
+        console.log(4747)
+        rightAns.push(num)
+        mistakes = mistakes.filter( e => e != num)  
+        console.log('else');
     }
+    console.log(mistakes);
+    console.log(rightAns);
     $(p[rAns - 1]).addClass('right')
+    
     p.off()
 }
 
-function save() {
-    console.log($(this));
-    // if (e.target.innerHTML == 'Save') {
-    //     localStorage.setItem('index', ind + 1)
-    //     console.log('dfsf');
-    // }
-    // else if (e.target.innerHTML == 'Start') {
-    //     localStorage.removeItem('index')
-    //     print(ind)
-    // }
-
-}
 
 $('[pager]').click(
     (e) => {
@@ -87,6 +84,8 @@ $('.side button').click((e) => {
     }
     else if (e.target.innerHTML == 'Start') {
         localStorage.removeItem('index')
+        mistakes = []
+        rightAns = []
         ind = 0
         print(ind)
     }
@@ -106,9 +105,13 @@ function allQuestions() {
     }
 
     mistakes = Array.from(new Set(mistakes))
+    rightAns = Array.from(new Set(rightAns))
     $('.mistakes').click(() => {
         mistakes.forEach(element => {
             $($('p')[element - 1]).addClass('wrong')
+        });
+        rightAns.forEach(element => {
+            $($('p')[element - 1]).addClass('right')
         });
     })
 
@@ -116,7 +119,7 @@ function allQuestions() {
         let num = e.target.innerHTML
         print(num - 1)
     })
-    console.log(mistakes);
+    // console.log(mistakes);
 }
 
 $('[icon]').click((e) => {
