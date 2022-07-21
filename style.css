@@ -172,7 +172,12 @@ input[type='button']{
     cursor: pointer;
     text-align: center;
 }
-
+.intro a{
+    text-decoration: none;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    letter-spacing: 0.8px;
+}
 .groups{
     display: none;
     width: 150px !important;
