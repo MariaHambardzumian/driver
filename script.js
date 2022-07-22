@@ -3,12 +3,18 @@ const key = localStorage.getItem('key')
 let group = allData[key]
 let info = [...group]
 
-let ind = (+localStorage.getItem(key))
-if (!ind) ind = 0
-else ind = ind - 1
-
 let mistakes = []
 let rightAns = []
+
+let Item = JSON.parse(localStorage.getItem(key))
+let ind
+if (!Item) ind = 0
+else {
+    ind = Item.index
+    ind = ind - 1
+    mistakes = Item.wrong
+    rightAns = Item.right}
+
 
 
 let data = info[ind]
@@ -86,7 +92,12 @@ print(ind)
 
 $('.side button').click((e) => {
     if (e.target.innerHTML == 'Save') {
-        localStorage.setItem(key, ind + 1)
+        dataItem = {
+            index: ind + 1,
+            wrong: mistakes,
+            right: rightAns
+        }
+        localStorage.setItem(key, JSON.stringify(dataItem))
     }
     else if (e.target.innerHTML == 'Start') {
         info = [...group]
@@ -122,22 +133,26 @@ function uniqueEl(array) {
     return array
 }
 
+function showANswers() {
+    mistakes.forEach(element => {
+        $($('p')[element - 1]).addClass('wrong')
+    });
+    rightAns.forEach(element => {
+        $($('p')[element - 1]).addClass('right')
+    })
+ }
+
 // All numbers of questions in section
 function allQuestions() {
 
     hideContentBar()
+    $('[icon]').attr('opened', 'q');
     for (let num = 1; num <= allCount; num++) {
         $('.main').append(`<p class='question'>${num}</p>`)
     }
 
-    $('.mistakes').click(() => {
-        mistakes.forEach(element => {
-            $($('p')[element - 1]).addClass('wrong')
-        });
-        rightAns.forEach(element => {
-            $($('p')[element - 1]).addClass('right')
-        });
-    })
+    $('.mistakes').click(showANswers)
+
 
     $('p').click((e) => {
         let num = e.target.innerHTML
@@ -156,7 +171,11 @@ $('[icon]').click((e) => {
         print(ind)
     }
 })
-$('#all').click(allQuestions)
+$('#all').click(()=>{
+    allQuestions()
+    showANswers()
+
+})
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
