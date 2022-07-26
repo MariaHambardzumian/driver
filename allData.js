@@ -2562,7 +2562,7 @@ const allData = {
 
         {
             question: 'Ի՞նչ է ցույց տալիս այս նշանի տակ տեղադրված ցուցանակը՝',
-            image: './media/4/image-20.jpg',
+            image: './media/4/image-020.jpg',
             options: [2,
                 'Ճանապարհի նեղ հատվածի երկարությունը։ ',
                 'Նշանից մինչեւ սահմանափակման տեղն ընկած հեռավորությունը։ ',
@@ -4033,6 +4033,835 @@ const allData = {
             ],
             image: './media/4/image-174.jpg',
         },
+    ],
+
+    group5:[
+        {
+            question: 'Տրանսպորտային միջոցները խաչմերուկը կանցնեն հետեւյալ հերթականությամբ',
+            image: './media/5/image-000.jpg',
+            options: [3,
+                'Թեթեւ մարդատար ավտոմոբիլը, ավտոբուսը, տրոլեյբուսը։',
+                'Տրոլեյբուսը եւ ավտոբուսը, թեթեւ մարդատար ավտոմոբիլը։',
+                'Տրոլեյբուսը, թեթեւ մարդատար ավտոմոբիլը, ավտոբուսը։',
+            ]
+        },
+    
+        {
+            question: 'Խաչմերուկն առաջինը կանցնի՝',
+            image: './media/5/image-000.jpg',
+            options: [4,
+                ' Կարմիր ավտոմոբիլը։',
+                ' Կապույտ ավտոմոբիլը',
+                ' Դեղին ավտոմոբիլը։',
+                ' Կանաչ ավտոմոբիլը։ ',
+            ]
+        },
+    
+        {
+            question: 'Խաչմերուկը վերջինը կանցնի',
+            image: './media/5/image-000.jpg',
+            options: [1,
+                'Կապույտ ավտոմոբիլը։',
+                'Կանաչ ավտոմոբիլը։',
+                'Կարմիր ավտոմոբիլը։ ',
+            ]
+        },
+    
+        {
+            question: 'Կապույտ ավտոմոբիլը խաչմերուկը կանցնի՝',
+            image: './media/5/image-000.jpg',
+            options: [1,
+                'Առաջինը։ ',
+                'Երկրորդը։',
+            ]
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
+        {
+            question: '',
+            image: './media/5/image-000.jpg',
+            options: []
+        },
+    
     ]
 }
 
