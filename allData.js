@@ -3215,7 +3215,7 @@ const allData = {
             ]
         },
 
-        {
+        {                
             question: 'Ո՞ր նշանն է արագության սահմանափակում մտցնում։',
             image: './media/8/Capture.png',
             options: [3,
@@ -3223,7 +3223,7 @@ const allData = {
                 '1 և 4',
                 'միայն 2-ը',
                 '2 և 3 ',
-            ]
+            ],
         },
 
         {
