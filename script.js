@@ -1,21 +1,27 @@
 
 const key = localStorage.getItem('key')
-let group = allData[key]
-let info = [...group]
+let group, info
 
 let mistakes = []
 let rightAns = []
 
 let Item = JSON.parse(localStorage.getItem(key))
-let ind
-if (!Item) ind = 0
-else {
+let ind = 0
+if(key != 'random' && Item){
     ind = Item.index
     ind = ind - 1
     mistakes = Item.wrong
-    rightAns = Item.right}
+    rightAns = Item.right
+    group = allData[key]
+    info = [...group]
 
-
+}else{
+    let test = []
+    for (const key in allData) {
+    test = test.concat(allData[key])
+    }
+    info = getRandom(test, 20)
+}
 
 let data = info[ind]
 const allCount = info.length
@@ -32,8 +38,19 @@ function showContentBar() {
     main.removeClass('all')
         .html('')
 }
+
+function hideSide(){
+    $('.side').hide()
+    $('.buttons').show()
+    $('#all').show()
+    $('.groups').hide()
+    $('.groups').hide()
+    main.removeClass('all')
+        .html('')
+}
 function print(i) {
-    showContentBar()
+    key != 'random'?showContentBar():hideSide();
+    
     data = info[i]
 
     let h2 = `<h2 class='N'>№ ${i + 1}</h2><hr><h2 class="quest">${data.question}</h2>`;
@@ -182,4 +199,18 @@ function shuffleArray(array) {
         const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
+}
+
+function getRandom(arr, n) {
+    var result = new Array(n),
+        len = arr.length,
+        taken = new Array(len);
+    if (n > len)
+        throw new RangeError("getRandom: more elements taken than available");
+    while (n--) {
+        var x = Math.floor(Math.random() * len);
+        result[n] = arr[x in taken ? taken[x] : x];
+        taken[x] = --len in taken ? taken[len] : len;
+    }
+    return result;
 }

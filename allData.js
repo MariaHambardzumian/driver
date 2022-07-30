@@ -5238,7 +5238,7 @@ const allData = {
 
         {
             question: 'Ձախ շրջադարձ կատարելիս պետք է զիջել',
-            image: './media/5/image-021.jpg',
+            image: './media/5/image-121.jpg',
             options: [1,
                 'Բեռնատարի վարորդին',
                 'Երկու վարորդներին',
@@ -5248,7 +5248,7 @@ const allData = {
 
         {
             question: 'Այս խաչմերուկում',
-            image: './media/5/image-022.jpg',
+            image: './media/5/image-122.jpg',
             options: [2,
                 'Կզիջեք ճանապարհը',
                 'Կանցնեք առաջինը ',
@@ -5257,14 +5257,14 @@ const allData = {
 
         {
             question: 'Տրամվային զիջել',
-            image: './media/5/image-023.jpg',
+            image: './media/5/image-123.jpg',
             options: [1, 'Պարտավոր ենք',
                 'Պարտավոր չենք ',]
         },
 
         {
             question: 'Այս իրավիճակում աջ շրջադարձը թույլատրվում է',
-            image: './media/5/image-024.jpg',
+            image: './media/5/image-124.jpg',
             options: [2,
                 'Միայն բեռնատարից հետո ',
                 'Բեռնատարի հետ միաժամանակ, եթե դա չի խոչընդոտի բեռնատարի վարորդին ',
@@ -5273,7 +5273,7 @@ const allData = {
 
         {
             question: 'Ո՞ր տրամվայի վարորդին ենք պարտավոր զիջել ճանապարհը ',
-            image: './media/5/image-025.jpg',
+            image: './media/5/image-125.jpg',
             options: [3,
                 'Միայն Ա',
                 'Միայն Բ',
@@ -5283,7 +5283,7 @@ const allData = {
 
         {
             question: 'Ուղիղ երթևեկելիս պետք է զիջել',
-            image: './media/5/image-026.jpg',
+            image: './media/5/image-126.jpg',
             options: [1,
                 'Թեթև մարդատարի վարորդին',
                 'Բոլորին',
@@ -5293,7 +5293,7 @@ const allData = {
 
         {
             question: 'Այս իրադրությունում զիջել անհրաժեշտ է',
-            image: './media/5/image-027.jpg',
+            image: './media/5/image-127.jpg',
             options: [3,
                 'Ավտոբուսի վարորդին',
                 'Բեռնատարի վարորդին',
@@ -5303,7 +5303,7 @@ const allData = {
 
         {
             question: 'Ո՞ր նշանի դեպքում խաչմերուկում պետք է զիջեք ձախից մոտեցող վարորդներին',
-            image: './media/5/image-028.jpg',
+            image: './media/5/image-128.jpg',
             options: [2,
                 'Միայն Ա',
                 'Միայն Բ',
@@ -5314,7 +5314,7 @@ const allData = {
 
         {
             question: 'Ո՞ր նկարում է պատկերված գլխավոր ճանապարհ',
-            image: './media/5/image-029.jpg',
+            image: './media/5/image-129.jpg',
             options: [2,
                 'Միայն ձախ',
                 'Նեքևի և ձախ',
@@ -5324,7 +5324,7 @@ const allData = {
 
         {
             question: 'Ո՞ր նկարում է պատկերված գլխավոր ճանապարհ ',
-            image: './media/5/image-030.jpg',
+            image: './media/5/image-130.jpg',
             options: [2,
                 ' Միայն աջ',
                 ' Աջ և ներքևի',
@@ -5334,7 +5334,7 @@ const allData = {
 
         {
             question: 'Ո՞ր նկարում է պատկերված գլխավոր ճանապարհ ',
-            image: './media/5/image-031.jpg',
+            image: './media/5/image-131.jpg',
             options: [3,
                 'Վերին ձախ',
                 'Վերին աջ',

@@ -1,3 +1,11 @@
+function resize() {
+    if (window.innerWidth * 2.3 <= window.innerHeight || window.innerHeight * 2.3 <= window.innerWidth) $('.intro').css('height', 'auto')
+    else $('.intro').css('height', 'var(--h)')
+}
+resize()
+
+$(window).resize(resize);
+
 $('.intro p').click(e => {
     let text = e.target.innerHTML
     switch (text) {
@@ -33,6 +41,11 @@ $('.intro p').click(e => {
             break;
         case 'Խումբ 10':
             localStorage.setItem('key', 'group10')
+            break;
+        case 'Թեստ':
+            localStorage.setItem('key', 'random')
+
     }
+
 
 })
