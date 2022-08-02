@@ -6,23 +6,27 @@ let mistakes = []
 let rightAns = []
 
 let Item = JSON.parse(localStorage.getItem(key))
-let ind = 0
-if(key != 'random' && Item){
-    ind = Item.index
-    ind = ind - 1
-    mistakes = Item.wrong
-    rightAns = Item.right
-    group = allData[key]
-    info = [...group]
+let ind = 0 
 
-}else{
+if(key == 'random'){
     let test = []
     for (const key in allData) {
     test = test.concat(allData[key])
     }
     info = getRandom(test, 20)
-}
 
+}else if(Item){
+    group = allData[key]
+    info = [...group]
+    ind = Item.index
+    ind = ind - 1
+    mistakes = Item.wrong
+    rightAns = Item.right
+} else{
+    group = allData[key]
+    info = [...group]
+}
+ 
 let data = info[ind]
 const allCount = info.length
 
