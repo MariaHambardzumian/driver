@@ -1,9 +1,6 @@
 const key = localStorage.getItem('key')
-let group
+let group, ind = 0, mistakes = [], rightAns = []
 
-let mistakes = [], rightAns = []
-
-let ind = 0
 
 if (key != 'random') {
     group = [...allData[key]]
@@ -21,10 +18,11 @@ if (key != 'random') {
     group = getRandom(test, 20)
 }
 
+
 let data = group[ind]
 const allCount = group.length
-
 let main = $('.main')
+
 
 function showContentBar() {
     $('.side').show()
@@ -44,6 +42,7 @@ function hideSide() {
     main.removeClass('all')
         .html('')
 }
+
 function print(i) {
     key != 'random' ? showContentBar() : hideSide();
 
@@ -92,6 +91,69 @@ function check() {
     p.off()
 }
 
+function hideContentBar() {
+    $('.side').hide()
+    $('.buttons').hide()
+    $('#all').hide()
+    $('.groups').show()
+    main.html('')
+        .addClass('all')
+        .append(`<button class='mistakes'>See mistakes</button>`)
+}
+
+function uniqueEl(array) {
+    array = Array.from(new Set(array))
+    return array
+}
+
+function showANswers() {
+    mistakes.forEach(element => {
+        $($('p')[element - 1]).addClass('wrong')
+    });
+    rightAns.forEach(element => {
+        $($('p')[element - 1]).addClass('right')
+    })
+}
+
+function allQuestions() {
+
+    hideContentBar()
+    $('[icon]').attr('opened', 'q');
+    for (let num = 1; num <= allCount; num++) {
+        main.append(`<p class='question'>${num}</p>`)
+    }
+
+    $('.mistakes').click(showANswers)
+
+
+    $('p').click((e) => {
+        let num = e.target.innerHTML
+        print(num - 1)
+    })
+
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+}
+
+function getRandom(arr, n) {
+    var result = new Array(n),
+        len = arr.length,
+        taken = new Array(len);
+    if (n > len)
+        throw new RangeError("getRandom: more elements taken than available");
+    while (n--) {
+        var x = Math.floor(Math.random() * len);
+        result[n] = arr[x in taken ? taken[x] : x];
+        taken[x] = --len in taken ? taken[len] : len;
+    }
+    return result;
+}
+
 
 $('[pager]').click(
     (e) => {
@@ -100,8 +162,6 @@ $('[pager]').click(
         print(ind)
     }
 )
-
-print(ind)
 
 $('.side button').click((e) => {
     if (e.target.innerHTML == 'Save') {
@@ -132,49 +192,6 @@ $('.side button').click((e) => {
     }
 })
 
-function hideContentBar() {
-    $('.side').hide()
-    $('.buttons').hide()
-    $('#all').hide()
-    $('.groups').show()
-    main.html('')
-        .addClass('all')
-        .append(`<button class='mistakes'>See mistakes</button>`)
-}
-
-function uniqueEl(array) {
-    array = Array.from(new Set(array))
-    return array
-}
-
-function showANswers() {
-    mistakes.forEach(element => {
-        $($('p')[element - 1]).addClass('wrong')
-    });
-    rightAns.forEach(element => {
-        $($('p')[element - 1]).addClass('right')
-    })
-}
-
-// All numbers of questions in section
-function allQuestions() {
-
-    hideContentBar()
-    $('[icon]').attr('opened', 'q');
-    for (let num = 1; num <= allCount; num++) {
-        main.append(`<p class='question'>${num}</p>`)
-    }
-
-    $('.mistakes').click(showANswers)
-
-
-    $('p').click((e) => {
-        let num = e.target.innerHTML
-        print(num - 1)
-    })
-
-}
-
 $('[icon]').click((e) => {
     if (!$(e.target).attr('opened')) {
         allQuestions()
@@ -185,29 +202,12 @@ $('[icon]').click((e) => {
         print(ind)
     }
 })
+
 $('#all').click(() => {
     allQuestions()
     showANswers()
 
 })
 
-function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-}
 
-function getRandom(arr, n) {
-    var result = new Array(n),
-        len = arr.length,
-        taken = new Array(len);
-    if (n > len)
-        throw new RangeError("getRandom: more elements taken than available");
-    while (n--) {
-        var x = Math.floor(Math.random() * len);
-        result[n] = arr[x in taken ? taken[x] : x];
-        taken[x] = --len in taken ? taken[len] : len;
-    }
-    return result;
-}
+print(ind)
