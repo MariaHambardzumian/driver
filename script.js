@@ -1,38 +1,30 @@
-
 const key = localStorage.getItem('key')
-let group, info
+let group
 
-let mistakes = []
-let rightAns = []
+let mistakes = [], rightAns = []
 
-let Item = JSON.parse(localStorage.getItem(key))
-let ind = 0 
+let ind = 0
 
-if(key == 'random'){
+if (key != 'random') {
+    group = [...allData[key]]
+    let Item = JSON.parse(localStorage.getItem(key))
+    if (Item) {
+        ind = Item.index - 1
+        mistakes = Item.wrong
+        rightAns = Item.right
+    }
+} else {
     let test = []
     for (const key in allData) {
-    test = test.concat(allData[key])
+        test = test.concat(allData[key])
     }
-    info = getRandom(test, 20)
-
-}else if(Item){
-    group = allData[key]
-    info = [...group]
-    ind = Item.index
-    ind = ind - 1
-    mistakes = Item.wrong
-    rightAns = Item.right
-} else{
-    group = allData[key]
-    info = [...group]
+    group = getRandom(test, 20)
 }
- 
-let data = info[ind]
-const allCount = info.length
+
+let data = group[ind]
+const allCount = group.length
 
 let main = $('.main')
-
-let p
 
 function showContentBar() {
     $('.side').show()
@@ -43,7 +35,7 @@ function showContentBar() {
         .html('')
 }
 
-function hideSide(){
+function hideSide() {
     $('.side').hide()
     $('.buttons').show()
     $('#all').show()
@@ -53,9 +45,9 @@ function hideSide(){
         .html('')
 }
 function print(i) {
-    key != 'random'?showContentBar():hideSide();
-    
-    data = info[i]
+    key != 'random' ? showContentBar() : hideSide();
+
+    data = group[i]
 
     let h2 = `<h2 class='N'>№ ${i + 1}</h2><hr><h2 class="quest">${data.question}</h2>`;
 
@@ -83,7 +75,7 @@ function check() {
     let rAns = (data.options)[0]
     let userAns = /[0-9]+/
     // debugger
-    let num = info.indexOf(data) + 1
+    let num = group.indexOf(data) + 1
     userAns = +userAns.exec($(this)[0].innerHTML)[0];
     if (rAns != userAns) {
         $(this).addClass('wrong')
@@ -121,19 +113,20 @@ $('.side button').click((e) => {
         localStorage.setItem(key, JSON.stringify(dataItem))
     }
     else if (e.target.innerHTML == 'Start') {
-        info = [...group]
+        group = [...allData[key]]
         $('[save]').show()
         localStorage.removeItem(key)
-        info
         mistakes = []
         rightAns = []
         ind = 0
         print(ind)
     }
     if (e.target.innerHTML == 'Shuffle') {
-        ind = 0
-        shuffleArray(info)
         $('[save]').hide()
+        ind = 0
+        mistakes = []
+        rightAns = []
+        shuffleArray(group)
         print(ind)
 
     }
@@ -161,7 +154,7 @@ function showANswers() {
     rightAns.forEach(element => {
         $($('p')[element - 1]).addClass('right')
     })
- }
+}
 
 // All numbers of questions in section
 function allQuestions() {
@@ -169,7 +162,7 @@ function allQuestions() {
     hideContentBar()
     $('[icon]').attr('opened', 'q');
     for (let num = 1; num <= allCount; num++) {
-        $('.main').append(`<p class='question'>${num}</p>`)
+        main.append(`<p class='question'>${num}</p>`)
     }
 
     $('.mistakes').click(showANswers)
@@ -192,7 +185,7 @@ $('[icon]').click((e) => {
         print(ind)
     }
 })
-$('#all').click(()=>{
+$('#all').click(() => {
     allQuestions()
     showANswers()
 
