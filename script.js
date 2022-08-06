@@ -15,6 +15,7 @@ if (key != 'random') {
     for (const key in allData) {
         test = test.concat(allData[key])
     }
+    shuffleArray(test)
     group = getRandom(test, 20)
 }
 
